@@ -42,7 +42,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Ejercicio 03</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+</head>
 <body>
 
 	<nav class="navbar">
@@ -60,6 +63,20 @@
 			<li><a href="#">link 9</a></li>
 		</ul>
 	</nav>
+
+	<script>
+		$(document).ready(function(){
+			$("nav").children().children("li:nth-child(4)").append('<ul><li><a href="#">link 4.a</a></li></ul>');
+
+			$("nav").children().children("li:nth-child(4)").prepend('<li><a href="#">link 3.5</a></li>');
+
+			$("nav").children().children("li:nth-child(6)").prepend('😎');
+
+			$("nav").children().children("li:nth-child(6)").append('🙂');
+
+		});
+
+	</script>
 
 </body>
 </html>

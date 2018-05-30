@@ -38,10 +38,31 @@
   <meta charset="utf-8">
 	<title>Ejercicio 04</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <button class="add_name">+</button>
   <ul class="names"></ul>
+
+  <script>
+    $(document).ready(function(){
+      $(".add_name").on("click", function(){
+        var data = prompt("Por favor agrega un nombre a la lista", "Harry Potter");
+          $(".names").append('<li><span>'+data+'</span><a class="remove_name" href="#">Borrar</a></li>');
+      });
+
+      $("ul").on("click", ".remove_name", function(event){
+        event.preventDefault()
+        event.stopPropagation()
+      
+        $(this).parent().remove()
+
+      });
+
+
+    });
+  </script>
 
 </body>
 </html>
